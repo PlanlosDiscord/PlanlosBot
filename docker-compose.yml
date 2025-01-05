@@ -1,0 +1,6 @@
+﻿services:
+  planlosbot:
+    image: planlosbot
+    build:
+      context: .
+      dockerfile: PlanlosBot/Dockerfile
