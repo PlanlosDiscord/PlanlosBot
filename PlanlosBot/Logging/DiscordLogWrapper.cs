@@ -1,42 +1,26 @@
 ﻿using Discord;
-using Serilog;
+using PlanlosBot.Contracts;
+using Serilog.Events;
 
-namespace PlanlosBot;
+namespace PlanlosBot.Logging;
 
 public class DiscordLogWrapper
 {
-    private readonly ILogger _logger;
+    private readonly ILogWrapper _logger;
 
-    public DiscordLogWrapper(ILogger logger)
+    public DiscordLogWrapper(ILogWrapper logger)
     {
         _logger = logger;
     }
 
     public Task Log(LogMessage msg)
     {
-        switch (msg.Severity)
-        {
-            case LogSeverity.Critical:
-                _logger.Fatal(msg.Message);
-                break;
-            case LogSeverity.Error:
-                _logger.Error(msg.Message);
-                break;
-            case LogSeverity.Warning:
-                _logger.Warning(msg.Message);
-                break;
-            case LogSeverity.Info:
-                _logger.Information(msg.Message);
-                break;
-            case LogSeverity.Verbose:
-                _logger.Verbose(msg.Message);
-                break;
-            case LogSeverity.Debug:
-                _logger.Debug(msg.Message);
-                break;
-            default:
-                throw new ArgumentOutOfRangeException();
-        }
+        _logger.Log(msg.Message, msg.Source, ConvertLogLevel(msg.Severity), msg.Exception);
         return Task.CompletedTask;
+    }
+
+    private static LogEventLevel ConvertLogLevel(LogSeverity severity)
+    {
+        return (LogEventLevel) 5 - (int) severity;
     }
 }
