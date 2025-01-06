@@ -1,6 +1,7 @@
 ﻿using Autofac;
 using Discord.Interactions;
 using Discord.WebSocket;
+using PlanlosBot.Contracts;
 using PlanlosBot.Logging;
 using Serilog;
 using Serilog.Events;
