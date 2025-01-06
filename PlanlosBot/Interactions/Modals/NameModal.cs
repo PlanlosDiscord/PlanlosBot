@@ -1,6 +1,11 @@
-﻿namespace PlanlosBot.Interactions.Modals;
+﻿using Discord.Interactions;
 
-public class NameModal
+namespace PlanlosBot.Interactions.Modals;
+
+public class NameModal : InteractionModuleBase
 {
-    
+    public void OnUserJoined()
+    {
+        
+    }
 }
