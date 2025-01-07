@@ -2,6 +2,7 @@
 using Discord.Interactions;
 using Discord.WebSocket;
 using PlanlosBot.Contracts;
+using PlanlosBot.Interactions.Modals;
 using PlanlosBot.Interactions.TestInteractions;
 using PlanlosBot.Logging;
 using Serilog;
@@ -38,6 +39,7 @@ public class BotModule : Module
         builder.RegisterInstance(interactionService).AsSelf().SingleInstance();
         
         builder.RegisterType<BotHost>().AsSelf().SingleInstance();
+        builder.RegisterType<NameModal>().AsSelf().SingleInstance();
 
         builder.RegisterType<TestCommands>().AsSelf();
     }
