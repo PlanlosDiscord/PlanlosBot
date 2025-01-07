@@ -25,4 +25,8 @@
       <PackageReference Include="Serilog.Sinks.File"/>
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\PlanlosBot.Attributes\PlanlosBot.Attributes.csproj" />
+    </ItemGroup>
+
 </Project>
