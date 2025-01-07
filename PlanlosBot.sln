@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Packages.props = Directory.Packages.props
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlanlosBot.Attributes", "PlanlosBot.Attributes\PlanlosBot.Attributes.csproj", "{E30BBFEF-6473-40A5-8FE3-F755990718AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{3849F969-AE9A-464D-863E-7D90C344702B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3849F969-AE9A-464D-863E-7D90C344702B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3849F969-AE9A-464D-863E-7D90C344702B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E30BBFEF-6473-40A5-8FE3-F755990718AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E30BBFEF-6473-40A5-8FE3-F755990718AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E30BBFEF-6473-40A5-8FE3-F755990718AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E30BBFEF-6473-40A5-8FE3-F755990718AD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
