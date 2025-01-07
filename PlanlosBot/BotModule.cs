@@ -16,6 +16,10 @@ public class BotModule : Module
         LoggerConfiguration configuration = new LoggerConfiguration()
             .WriteTo.Console(restrictedToMinimumLevel: LogEventLevel.Debug)
             .WriteTo.File("latest.log", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true);
+            .MinimumLevel.Debug()
+            .Enrich.FromLogContext()
+            .WriteTo.Console()
+            .WriteTo.File("latest.log", rollingInterval: RollingInterval.Day, rollOnFileSizeLimit: true, restrictedToMinimumLevel: LogEventLevel.Information);
         
         builder.RegisterInstance(configuration.CreateLogger())
             .As<ILogger>()
